@@ -1,0 +1,29 @@
+<div class="search-container">
+  <h2>Search Inventory</h2>
+
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Search by name or category..."
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+    />
+  </div>
+
+  <div class="results">
+    <h3>Results:</h3>
+
+    <div *ngIf="results.length === 0" class="no-results">
+      No items found.
+    </div>
+
+    <ul class="item-list">
+      <li *ngFor="let item of results" class="item-card">
+        <h4>{{ item.name }}</h4>
+        <p><strong>Category:</strong> {{ item.category }}</p>
+        <p><strong>Price:</strong> ${{ item.price }}</p>
+        <p><strong>Description:</strong> {{ item.description }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
