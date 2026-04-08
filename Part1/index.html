@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROG2005 A2 - Part 1 TypeScript Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Management System</h1>
+
+        <div class="form-section">
+            <h3>Add / Update Item</h3>
+            <input type="text" id="itemId" placeholder="Item ID (unique)" required>
+            <input type="text" id="itemName" placeholder="Item Name" required>
+            <select id="category">
+                <option>Electronics</option>
+                <option>Furniture</option>
+                <option>Clothing</option>
+                <option>Tools</option>
+                <option>Miscellaneous</option>
+            </select>
+            <input type="number" id="quantity" placeholder="Quantity" required>
+            <input type="number" id="price" placeholder="Price" required>
+            <input type="text" id="supplier" placeholder="Supplier Name" required>
+            <select id="stockStatus">
+                <option>In Stock</option>
+                <option>Low Stock</option>
+                <option>Out of Stock</option>
+            </select>
+            <select id="popularItem">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            <textarea id="comment" placeholder="Comment (optional)"></textarea>
+            <button onclick="addOrUpdateItem()">Save Item</button>
+        </div>
+
+        <div class="search-section">
+            <h3>Search</h3>
+            <input type="text" id="searchInput" placeholder="Search by name" oninput="searchItems()">
+        </div>
+
+        <div class="actions">
+            <button onclick="showAllItems()">Show All Items</button>
+            <button onclick="showPopularItems()">Show Popular Only</button>
+            <button onclick="deleteItemPrompt()">Delete Item</button>
+        </div>
+
+        <div id="output" class="output"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
