@@ -28,7 +28,7 @@ export class InventoryComponent {
         price: this.price,
         category: this.category
       });
-      // 重置表单
+      // 重置
       this.name = '';
       this.description = '';
       this.price = null;
